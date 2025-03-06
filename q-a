@@ -1,0 +1,42 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string how = get_string("Bot: How can I help you?\n");
+
+    if (strcmp(how, "what's the difference between this and these?") == 0)
+    {
+        printf("Bot: THIS refers to one thing, while THESE refers to multiple things.\n");
+
+        string understood = get_string("Bot: Did you understand? (yes/no)\n");
+
+        if (strcmp(understood, "yes") == 0)
+        {
+            printf("Bot: Great! Any other questions you want to ask?\n");
+        }
+        else if (strcmp(understood, "no") == 0)
+        {
+            printf("Bot: Let me know if you need further clarification!\n");
+        }
+
+        string again = get_string("Bot: Any other question you want to ask? (yes/no)\n");
+
+        if (strcmp(again, "no") == 0)
+        {
+            printf("Bot: If you have another question, just ask me anytime!\n");
+        }
+        else if (strcmp(again, "yes") == 0)
+        {
+            string ask = get_string("Bot: Go on, I'll try my best to answer it!\n");
+            // Handle the user's next question here if needed.
+        }
+    }
+    else
+    {
+        printf("Bot: Sorry, I can't help with that right now. Please ask another question!\n");
+    }
+
+    return 0;
+}
