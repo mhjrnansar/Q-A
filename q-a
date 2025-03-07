@@ -6,31 +6,26 @@ int main(void)
 {
     string how = get_string("Bot: How can I help you?\n");
 
-    if (strcmp(how, "what's the difference between this and these?") == 0)
+    if (strcmp(how, "who are you") == 0)
     {
-        printf("Bot: THIS refers to one thing, while THESE refers to multiple things.\n");
+        string again = get_string("Bot: I'm Test, your friendly Bot helper! I can assist with questions, What's on your mind?\n");
 
-        string understood = get_string("Bot: Did you understand? (yes/no)\n");
-
-        if (strcmp(understood, "yes") == 0)
-        {
-            printf("Bot: Great! Any other questions you want to ask?\n");
-        }
-        else if (strcmp(understood, "no") == 0)
-        {
-            printf("Bot: Let me know if you need further clarification!\n");
-        }
-
-        string again = get_string("Bot: Any other question you want to ask? (yes/no)\n");
-
-        if (strcmp(again, "no") == 0)
+        if (strcmp(again, "nothing") == 0)
         {
             printf("Bot: If you have another question, just ask me anytime!\n");
         }
-        else if (strcmp(again, "yes") == 0)
+        else if (strcmp(again, "you got paid?") == 0)
         {
-            string ask = get_string("Bot: Go on, I'll try my best to answer it!\n");
-            // Handle the user's next question here if needed.
+            string ask = get_string("Bot: Oh, I don’t get paid—I’m here purely for the joy of helping you!\n");
+
+            if (strcmp(ask, "oh") == 0)
+            {
+                printf("Bot: any other question you want to ask?\n");
+            }
+            else if (strcmp(ask, "you don't eat?") == 0)
+            {
+                printf("Nope, I don’t eat either! I run on the power of code, electricity, and good vibes!\n");
+            }
         }
     }
     else
