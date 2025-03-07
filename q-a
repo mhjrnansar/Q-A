@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
+void print_row(int bricks);
+
 int main(void)
 {
     string how = get_string("Bot: How can I help you?\n");
 
     if (strcmp(how, "who are you") == 0)
     {
-        string again = get_string("Bot: I'm Test, your friendly Bot helper! I can assist with questions, What's on your mind?\n");
+        string again = get_string("Bot: I'm ___, your friendly Bot helper! I can assist with questions, What's on your mind?\n");
 
         if (strcmp(again, "nothing") == 0)
         {
@@ -20,11 +22,16 @@ int main(void)
 
             if (strcmp(ask, "oh") == 0)
             {
-                printf("Bot: any other question you want to ask?\n");
+                string q = get_string("Bot: any other question you want to ask?\n");
+
+                if (strcmp(q, "no") == 0)
+                {
+                    printf("Bot: Hit me up anytime you want!\n");
+                }
             }
             else if (strcmp(ask, "you don't eat?") == 0)
             {
-                printf("Nope, I don’t eat either! I run on the power of code, electricity, and good vibes!\n");
+                printf("Bot: Nope, I don’t eat either! I run on the power of code, electricity, and good vibes!\n");
             }
         }
     }
